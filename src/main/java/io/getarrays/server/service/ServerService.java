@@ -14,4 +14,3 @@ public interface ServerService {
     Server update(Server server); //give it a server to update takes the server with the updated info and store it in a DB
     Boolean delete(Long id); // goes in the DB ,finds the server and deletes it
 }
-
