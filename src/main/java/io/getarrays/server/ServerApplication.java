@@ -31,7 +31,7 @@ public class ServerApplication {
 					(null, "192.168.1.21", "MS 2008", "32 GB", "Web Server",
 							"http://localhost:8080/server/image/server3.png", SERVER_UP));
 			serverRepo.save(new Server
-					(null, "192.168.1.14", "Red Hat Enterprise Linux", "64 GB", "Mail Server",
+					(null, "192.168.1.14", "Kali Linux", "64 GB", "Mail Server",
 							"http://localhost:8080/server/image/server4.png", SERVER_DOWN));
 		};
 	}
