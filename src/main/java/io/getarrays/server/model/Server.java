@@ -15,13 +15,13 @@ import static javax.persistence.GenerationType.AUTO;
 
 //Class representing the servers
 @Entity
-@Data // for the getters and setters
+@Data // for the getters and setters from Lombok
 @NoArgsConstructor
 @AllArgsConstructor
 public class Server {
 
     @Id
-    @GeneratedValue(strategy = AUTO)
+    @GeneratedValue(strategy = AUTO) // Specify how to generate @Id (this is from java persistence)
     private Long id; // id of the server and a primary key in the database
 
     @Column(unique = true) // creates a constraint on an IP address not allowing multiple ip's with the same number
@@ -34,5 +34,5 @@ public class Server {
     private String memory;
     private String type;
     private String imageUrl;
-    private Status status;
+    private Status status;  // Enum
 }

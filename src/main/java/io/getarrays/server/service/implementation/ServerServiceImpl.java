@@ -38,7 +38,7 @@ public class ServerServiceImpl implements ServerService {
     public Server ping(String ipAddress) throws IOException {
         log.info("Pinging server IP: {}", ipAddress);
         Server server = serverRepo.findByIpAddress(ipAddress); // select the server by ipAddress
-        InetAddress address = InetAddress.getByName(ipAddress);
+        InetAddress address = InetAddress.getByName(ipAddress); // ping
         server.setStatus(address.isReachable(10000)? Status.SERVER_UP : Status.SERVER_DOWN);
         serverRepo.save(server);
         return server;
@@ -73,7 +73,7 @@ public class ServerServiceImpl implements ServerService {
         String[] imagesNames = { "server1.png", "server2.png", "server3.png", "server4.png" };
         return ServletUriComponentsBuilder
                 .fromCurrentContextPath()
-                .path("/server/image"+imagesNames[new Random().nextInt(4)]).toUriString();
+                .path("/server/image/"+imagesNames[new Random().nextInt(4)]).toUriString();
         //append a random image from 0,1,2,3 bound 4 is never reached.
     }
 }

@@ -23,9 +23,9 @@ import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 @RestController
 @RequestMapping("/server")
-@RequiredArgsConstructor // creates constructor and adds serverService field in it (line12)
+@RequiredArgsConstructor // creates constructor and adds serverService field in it (line12) 1.DEP-INJ
 public class ServerResource {
-    private final ServerServiceImpl serverService;
+    private final ServerServiceImpl serverService; // 2.DEP-INJ
 
     @GetMapping("/list")
     public ResponseEntity<Response> getServers() {
